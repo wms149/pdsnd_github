@@ -1,4 +1,4 @@
-### Date Created:
+### Date Created
 September 23rd 2020
 
 ### Project Title
