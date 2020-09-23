@@ -5,7 +5,7 @@ September 23rd 2020
 Explore US Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+Calculate different statistical values of U.S. Bikeshare data using a Python code. All calculations require user input to choose and filter data as required.
 
 ### Files used
 Include the files used
