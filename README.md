@@ -16,4 +16,7 @@ Calculate different statistical values of U.S. Bikeshare data using a Python cod
   * washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+All data files and original bikeshare.py code were downloaded from UDACITY's course: *Programming for Data Science with Python Nanodegree*
+
+The course's homepage can be accessed using the following link:
+https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104
