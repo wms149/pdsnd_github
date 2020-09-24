@@ -17,8 +17,8 @@ def get_filters():
     """
     print('\nHello! Let\'s explore some US bikeshare data!')
 
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    while True: #First while loop, checks for any exception error including keyboard interrution!
+    # get user input for city (chicago, new york city, washington).
+    while True: #First while loop, checks for any exception error including keyboard interruption!
         try:
             while True: #Second while loop, checks for any spelling/value mistakes!
                 city = input('\nPlease select a city (chicago, new york city, \
@@ -34,8 +34,8 @@ and reinput the correct city!')
             print('\nAn error occured!')
             print('Please repeat your entries and make sure to follow the guidelines!')
 
-    # get user input for month (all, january, february, ... , june)
-    while True: #First while loop, checks for any exception error including keyboard interrution!
+    # get user input for month.
+    while True: #First while loop, checks for any exception error including keyboard interruption!
         try:
             while True: #Second while loop, checks for any mistakes entering yes or no!
                 q1 = input('\nWould you like to filter data by month (yes or no)?\n').lower()
@@ -64,8 +64,8 @@ and reinput the correct month!')
             print('\nAn error occured!')
             print('Please repeat your entries and make sure to follow the guidelines!')
 
-    # get user input for day of week (all, monday, tuesday, ... sunday)
-    while True: #First while loop, checks for any exception error including keyboard interrution!
+    # get user input for day of week.
+    while True: #First while loop, checks for any exception error including keyboard interruption!
         try:
             while True: #Second while loop, checks for any mistakes entering yes or no!
                 q2 = input('\nWould you like to filter data by day of week (yes or no)?\n').lower()
@@ -121,8 +121,8 @@ def load_data(city, month, day):
     # extract month and day of week from Start Time to create new columns
     df['Month'] = df['Start Time'].dt.month
     df['Day of Week'] = df['Start Time'].dt.day_name() ##For new version Pandas
-    #df['Day of Week'] = df['Start Time'].dt.weekday_name ##For old version Pandas
-
+    #df['Day of Week'] = df['Start Time'].dt.weekday_name ##Use this code line instead
+                                                          ##for old version Pandas
     # filter by month if applicable
     if month != 'none':
         # use the index of the months list to get the corresponding int
