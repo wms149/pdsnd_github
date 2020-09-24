@@ -31,8 +31,8 @@ and reinput the correct city!')
             print('The selected city is:', city.title())
             break
         except:
-            print('\nAn error occured!')
-            print('Please repeat your entries and make sure to follow the guidelines!')
+            print('\nAn error occured!\nPlease repeat your entries and make sure to follow the guidelines!')
+
 
     # get user input for month (all, january, february, ... , june)
     while True: #First while loop, checks for any exception error including keyboard interrution!
@@ -61,8 +61,8 @@ and reinput the correct month!')
             print('The selected month filter is:', month.title())
             break
         except:
-            print('\nAn error occured!')
-            print('Please repeat your entries and make sure to follow the guidelines!')
+            print('\nAn error occured!\nPlease repeat your entries and make sure to follow the guidelines!')
+
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True: #First while loop, checks for any exception error including keyboard interrution!
@@ -92,8 +92,8 @@ and reinput the correct week day!')
             print('The selected day of week filter is:', day.title())
             break
         except:
-            print('\nAn error occured!')
-            print('Please repeat your entries and make sure to follow the guidelines!')
+            print('\nAn error occured!\nPlease repeat your entries and make sure to follow the guidelines!')
+
 
     print('-'*100)
     return city, month, day
@@ -190,8 +190,8 @@ def station_stats(df):
     #This method ensures any white spaces from beginning and end of the strings are removed
     #before being joined!
     most_trip = df['Trip'].mode()[0]
-    print('\n The most common trip taken is:')
-    print('', most_trip)
+    print('\n The most common trip taken is:\n {}'.format(most_trip))
+
 
     print('\n]')
 
@@ -208,13 +208,13 @@ def trip_duration_stats(df):
 
     # display total travel time
     total_time = df['Trip Duration'].sum()
-    print(' The total travelled time by all trips:')
-    print(' {} seconds'.format(total_time))
+    print(' The total travelled time by all trips:\n {} seconds'.format(total_time))
+
 
     # display mean travel time
     mean_time = df['Trip Duration'].mean()
-    print('\n The average travelled time:')
-    print(' {} seconds'.format(mean_time))
+    print('\n The average travelled time:\n {} seconds'.format(mean_time))
+    
 
     print('\n]')
 
@@ -262,7 +262,7 @@ def user_stats(df, city):
         print(' User Birth Year statistics is not available for the selected city!')
 
     print('\n]')
-    
+
     print('-'*100)
 
 ################################################################################
