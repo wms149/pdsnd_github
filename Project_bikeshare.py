@@ -296,6 +296,11 @@ def raw_data(df):
 ################################################################################
 
 def main():
+    """
+    Perfroms all needed calculation and user-based interaction.
+    Additionally, displays all the results in an interactive manner.
+    """
+
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
