@@ -38,13 +38,13 @@ and reinput the correct city!')
     while True: #First while loop, checks for any exception error including keyboard interrution!
         try:
             while True: #Second while loop, checks for any mistakes entering yes or no!
-                q1 = input('\nWould you like to filter data by month (yes or no)?\n').lower()
-                if q1 == 'yes' or q1 == 'no':
+                ask1 = input('\nWould you like to filter data by month (yes or no)?\n').lower()
+                if ask1 == 'yes' or ask1 == 'no':
                     break
                 else:
                     print('\nInvalid entry, please answer with yes or no!')
             while True: #Third while loop, checks for any spelling/value mistakes!
-                if q1 == 'no':
+                if ask1 == 'no':
                     month = 'none'
                     break
                 else:
@@ -68,13 +68,13 @@ and reinput the correct month!')
     while True: #First while loop, checks for any exception error including keyboard interrution!
         try:
             while True: #Second while loop, checks for any mistakes entering yes or no!
-                q2 = input('\nWould you like to filter data by day of week (yes or no)?\n').lower()
-                if q2 == 'yes' or q2 == 'no':
+                ask2 = input('\nWould you like to filter data by day of week (yes or no)?\n').lower()
+                if ask2 == 'yes' or ask2 == 'no':
                     break
                 else:
                     print('\nInvalid entry, please answer with yes or no!')
             while True: #Third while loop, checks for any spelling/value mistakes!
-                if q2 == 'no':
+                if ask2 == 'no':
                     day = 'none'
                     break
                 else:
@@ -214,7 +214,7 @@ def trip_duration_stats(df):
     # display mean travel time
     mean_time = df['Trip Duration'].mean()
     print('\n The average travelled time:\n {} seconds'.format(mean_time))
-    
+
 
     print('\n]')
 
@@ -271,20 +271,20 @@ def raw_data(df):
     """Displays filtered raw data, 5 rows at a time!"""
 
     while True: #Checks for any mistakes entering yes or no!
-        q3 = (input('\nWould you like to view raw data for the first 5 trips? Yes or No?\n')).lower()
-        if q3 == 'yes' or q3 == 'no':
+        ask3 = (input('\nWould you like to view raw data for the first 5 trips? Yes or No?\n')).lower()
+        if ask3 == 'yes' or ask3 == 'no':
             break
         else:
             print('\nInvalid entry, please answer with yes or no!')
 
-    k = 0 #Initiating row count!
+    row_num = 0 #Initiating row count!
     while True: #This loops prints 5 rows of raw data per turn if user asked to view them!
-        if q3 == 'yes':
-            print(df.iloc[k : k + 5])
-            k += 5
+        if ask3 == 'yes':
+            print(df.iloc[row_num : row_num + 5])
+            row_num += 5
             while True: #Checks for any mistakes entering yes or no!
-                q3 = (input('\nWould you like to view raw data for the next 5 trips? Yes or No?\n')).lower()
-                if q3 == 'yes' or q3 == 'no':
+                ask3 = (input('\nWould you like to view raw data for the next 5 trips? Yes or No?\n')).lower()
+                if ask3 == 'yes' or ask3 == 'no':
                     break
                 else:
                     print('\nInvalid entry, please answer with yes or no!')
