@@ -31,20 +31,20 @@ and reinput the correct city!')
             print('The selected city is:', city.title())
             break
         except:
-            print('\nAn error occured!')
-            print('Please repeat your entries and make sure to follow the guidelines!')
+            print('\nAn error occured!\nPlease repeat your entries and make sure to follow the guidelines!')
+
 
     # get user input for month.
     while True: #First while loop, checks for any exception error including keyboard interruption!
         try:
             while True: #Second while loop, checks for any mistakes entering yes or no!
-                q1 = input('\nWould you like to filter data by month (yes or no)?\n').lower()
-                if q1 == 'yes' or q1 == 'no':
+                ask1 = input('\nWould you like to filter data by month (yes or no)?\n').lower()
+                if ask1 == 'yes' or ask1 == 'no':
                     break
                 else:
                     print('\nInvalid entry, please answer with yes or no!')
             while True: #Third while loop, checks for any spelling/value mistakes!
-                if q1 == 'no':
+                if ask1 == 'no':
                     month = 'none'
                     break
                 else:
@@ -61,20 +61,20 @@ and reinput the correct month!')
             print('The selected month filter is:', month.title())
             break
         except:
-            print('\nAn error occured!')
-            print('Please repeat your entries and make sure to follow the guidelines!')
+            print('\nAn error occured!\nPlease repeat your entries and make sure to follow the guidelines!')
+
 
     # get user input for day of week.
     while True: #First while loop, checks for any exception error including keyboard interruption!
         try:
             while True: #Second while loop, checks for any mistakes entering yes or no!
-                q2 = input('\nWould you like to filter data by day of week (yes or no)?\n').lower()
-                if q2 == 'yes' or q2 == 'no':
+                ask2 = input('\nWould you like to filter data by day of week (yes or no)?\n').lower()
+                if ask2 == 'yes' or ask2 == 'no':
                     break
                 else:
                     print('\nInvalid entry, please answer with yes or no!')
             while True: #Third while loop, checks for any spelling/value mistakes!
-                if q2 == 'no':
+                if ask2 == 'no':
                     day = 'none'
                     break
                 else:
@@ -92,8 +92,8 @@ and reinput the correct week day!')
             print('The selected day of week filter is:', day.title())
             break
         except:
-            print('\nAn error occured!')
-            print('Please repeat your entries and make sure to follow the guidelines!')
+            print('\nAn error occured!\nPlease repeat your entries and make sure to follow the guidelines!')
+
 
     print('-'*100)
     return city, month, day
@@ -145,7 +145,7 @@ def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
-    start_time = time.time()
+
     print('[\n')
 
     # display the most common month
@@ -163,7 +163,7 @@ def time_stats(df):
     print('\n The most common starting hour for traveling is:', most_start_hour)
 
     print('\n]')
-    print("\nThis took %s seconds." % (time.time() - start_time))
+
     print('-'*100)
 
 ################################################################################
@@ -172,7 +172,7 @@ def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
-    start_time = time.time()
+
     print('[\n')
 
     # display most commonly used start station
@@ -190,11 +190,11 @@ def station_stats(df):
     #This method ensures any white spaces from beginning and end of the strings are removed
     #before being joined!
     most_trip = df['Trip'].mode()[0]
-    print('\n The most common trip taken is:')
-    print('', most_trip)
+    print('\n The most common trip taken is:\n {}'.format(most_trip))
+
 
     print('\n]')
-    print("\nThis took %s seconds." % (time.time() - start_time))
+
     print('-'*100)
 
 ################################################################################
@@ -203,21 +203,21 @@ def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
     print('\nCalculating Trip Duration...\n')
-    start_time = time.time()
+
     print('[\n')
 
     # display total travel time
     total_time = df['Trip Duration'].sum()
-    print(' The total travelled time by all trips:')
-    print(' {} seconds'.format(total_time))
+    print(' The total travelled time by all trips:\n {} seconds'.format(total_time))
+
 
     # display mean travel time
     mean_time = df['Trip Duration'].mean()
-    print('\n The average travelled time:')
-    print(' {} seconds'.format(mean_time))
+    print('\n The average travelled time:\n {} seconds'.format(mean_time))
+
 
     print('\n]')
-    print("\nThis took %s seconds." % (time.time() - start_time))
+
     print('-'*100)
 
 ################################################################################
@@ -226,7 +226,7 @@ def user_stats(df, city):
     """Displays statistics on bikeshare users."""
 
     print('\nCalculating User Stats...\n')
-    start_time = time.time()
+
     print('[\n')
 
     # Display counts of user types
@@ -262,7 +262,7 @@ def user_stats(df, city):
         print(' User Birth Year statistics is not available for the selected city!')
 
     print('\n]')
-    print("\nThis took %s seconds." % (time.time() - start_time))
+
     print('-'*100)
 
 ################################################################################
@@ -271,20 +271,20 @@ def raw_data(df):
     """Displays filtered raw data, 5 rows at a time!"""
 
     while True: #Checks for any mistakes entering yes or no!
-        q3 = (input('\nWould you like to view raw data for the first 5 trips? Yes or No?\n')).lower()
-        if q3 == 'yes' or q3 == 'no':
+        ask3 = (input('\nWould you like to view raw data for the first 5 trips? Yes or No?\n')).lower()
+        if ask3 == 'yes' or ask3 == 'no':
             break
         else:
             print('\nInvalid entry, please answer with yes or no!')
 
-    k = 0 #Initiating row count!
+    row_num = 0 #Initiating row count!
     while True: #This loops prints 5 rows of raw data per turn if user asked to view them!
-        if q3 == 'yes':
-            print(df.iloc[k : k + 5])
-            k += 5
+        if ask3 == 'yes':
+            print(df.iloc[row_num : row_num + 5])
+            row_num += 5
             while True: #Checks for any mistakes entering yes or no!
-                q3 = (input('\nWould you like to view raw data for the next 5 trips? Yes or No?\n')).lower()
-                if q3 == 'yes' or q3 == 'no':
+                ask3 = (input('\nWould you like to view raw data for the next 5 trips? Yes or No?\n')).lower()
+                if ask3 == 'yes' or ask3 == 'no':
                     break
                 else:
                     print('\nInvalid entry, please answer with yes or no!')
